@@ -1,0 +1,150 @@
+footer {
+    margin-top: 30px;
+
+}
+
+@media only screen and (max-width: 1005px) {
+    footer>div:first-child>img:first-child {
+        display: inline;
+    }
+
+}
+
+.footer__top {
+    width: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 1005px) {
+    .footer__top {
+        text-align: center;
+        width: 100%;
+    }
+
+
+}
+
+.footer__top>img {
+    max-height: 40px;
+    max-width: 200px;
+    padding-left: 20px;
+}
+
+.footer__mid-item {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    display: flex;
+}
+
+.footer__links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer__links>a {
+    text-decoration: none;
+    color: #484848;
+    width: 100%;
+    color: #484848;
+
+}
+
+.footer__links>a:hover {
+    text-decoration: none;
+    color: #484848;
+}
+
+.footer__mid-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #484848;
+
+}
+.footer__mid-link {
+padding-top: 12px;
+}
+.footer__mid-link>a {
+    color: #dba43f;
+    text-decoration-line: underline;
+}
+
+.footer__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #dadada;
+    border-top: 1px solid #dadada;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media only screen and (max-width: 801px) {
+    .footer__content {
+        flex-direction: column !important;
+        border-bottom: none;
+
+    }
+
+
+    .footer__content>div {
+        max-width: 100%;
+        border-bottom: 1px solid #dadada;
+        padding-bottom: 25px;
+    }
+
+}
+
+.footer__item-title>h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #484848;
+}
+
+.footer__icons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer__icons>a>img {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 30px;
+    width: 30px;
+
+}
+
+.footer__icons>a {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 30px;
+    width: 30px;
+    text-decoration: none;
+    color: #484848;
+    width: 100%;
+    font-size: 14px;
+    align-items: center;
+}
+
+.footer__bottom {
+    padding-top: 15px;
+    color: #484848;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 40px;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+.footer_mid-text{
+    overflow-wrap: break-word;
+    inline-size: 500px;
+}
