@@ -153,7 +153,6 @@
     }
     
     .hero__title {
-        margin-top: 60px !important;
         font-family: 'Roboto Slab', serif;
         color: #484848;
         line-height: 44px;
@@ -262,7 +261,6 @@
     }
     
     .hero__title {
-        margin-top: 60px !important;
         font-family: 'Roboto Slab', serif;
         color: #484848;
         line-height: 44px;
@@ -319,6 +317,9 @@
         line-height: 26px;
         font-family: Open Sans, Arial, Helvetica, Nimbus Sans L, sans-serif;
     }
+    .hero__img {
+       margin: 0rem 0rem 2rem 0rem;
+    }  
     
     .hero__img>img {
         width: 734px;
@@ -558,7 +559,6 @@
     }
     
     .third__hero-title {
-        margin-top: 60px !important;
         font-family: 'Roboto Slab', serif;
         color: #484848;
         line-height: 44px;
@@ -755,3 +755,8 @@
         }
     }
     
+    .grid__icon-details {
+        align-items: center;
+        display: flex;
+        margin-right: 1rem;
+    }

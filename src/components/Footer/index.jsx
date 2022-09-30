@@ -1,48 +1,53 @@
 import './footer.css';
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import facebook from "../../images/facebook__icon.svg"
+import mail from "../../images/mail__icon.svg"
+import instagram from "../../images/instagram__icon.svg"
+import youtube from "../../images/youtube__icon.svg"
+import phone from "../../images/phone__icon.svg"
+import {} from "react-router-dom";
 const Footer = () => {
     return (
         <footer>
-        <div class="footer__top">
-        <img class="footer__logo-img" src="images/surfing__logo.svg" alt="" />
+        <div className="footer__top">
+        <img className="footer__logo-img" src="images/surfing__logo.svg" alt="" />
         </div>
-        <div class="footer__content">
-            <div class="footer__mid-item">
-                <div class="footer__mid-text footer__links">
-                    <div class="footer__item-title">
+        <div className="footer__content">
+            <div className="footer__mid-item">
+                <div className="footer__mid-text footer__links">
+                    <div className="footer__item-title">
                         <h1>
                             Quick Links 
                         </h1>
                     </div>
-                    <a href="">
+                    <a href='./RealEstate'>
                         Surf
                     </a>
-                    <a href="">
+                    <a href='./RealEstate'>
                         Real Estate
                     </a>
-                    <a href="">
+                    <a href='./RealEstate'>
                         Vacation Homes
                     </a>
-                    <a href="">
+                    <a href='./RealEstate'>
                         Discover Nosara
                     </a>
-                    <a href="">
+                    <a href='./RealEstate'>
                         Blog
                     </a>
-                    <a href="">
+                    <a href='./RealEstate'>
                         Contact
                     </a>
-
+                    
                 </div>
             </div>
-            <div class="footer__mid-item">
-                <div class="footer__mid-text">
-                    <div class="footer__item-title">
+            <div className="footer__mid-item">
+                <div className="footer__mid-text">
+                    <div className="footer__item-title">
                         <h1>
                             Surfing Nosara - It's easier than you think. &nbsp
                         </h1>
                     </div>
-                    <div class="footer_mid-text">
+                    <div className="footer_mid-text">
                         Founded in 2007 with a vision to be the place to exchange expert real estate advice and daily
                         surf
                         reports for the area, Surfing Nosara has grown into an informational and vacation hub, as well
@@ -55,44 +60,44 @@ const Footer = () => {
                         team to
                         allow us to do this.
                     </div>
-                    <div class="footer__mid-link">
+                    <div className="footer__mid-link">
                         <a href="/">Checked out our latest blog post?</a>
                     </div>
                 </div>
                 
             </div>
-            <div class="footer__mid-item">
-                <div class="footer__icons">
-                    <div class="footer__item-title">
+            <div className="footer__mid-item">
+                <div className="footer__icons">
+                    <div className="footer__item-title">
                         <h1>
                             Get In Touch 
                         </h1>
     
                     </div>
-                    <a href="">
-                        <img src="images/phone__icon.svg" alt="/" />
+                    <a href='./RealEstate'>
+                        <img src={phone} alt="/" />
                         <span>+1-800-591-5407</span>
                     </a>
-                    <a href="">
-                        <img src="images/mail__icon.svg" alt="/" />
+                    <a href='./RealEstate'>
+                        <img src={mail} alt="/" />
                         <span>info@surfingnosara.com</span>
                     </a>
-                    <a href="">
-                        <img src="images/facebook__icon.svg" alt="/" />
+                    <a href='./RealEstate'>
+                        <img src={facebook} alt="/" />
                         <span>facebook.com/Surfing Nosara</span>
                     </a>
-                    <a href="">
-                        <img src="images/instagram__icon.svg" alt="/" />
+                    <a href='./RealEstate'>
+                        <img src={instagram} alt="/" />
                         <span>instagram.com/surfing_nosara/</span>
                     </a>
-                    <a href="">
-                        <img src="images/youtube__icon.svg" alt="/" />
+                    <a href='./RealEstate'>
+                        <img src={youtube} alt="/" />
                         <span>youtube.com/user/surfingnosaravideos</span>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="footer__bottom">
+        <div className="footer__bottom">
             <div>
                 © 2016 Surfing Nosara. All Right Reserved
             </div>

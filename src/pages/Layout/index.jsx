@@ -1,12 +1,17 @@
 import React from "react";
-import {Outlet} from "react-router-dom";
+// import {Outlet} from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-const Layout = () => {
+// import Hero from "../../components/Hero";
+const Layout = ({children}) => {
   return (
     <>
       <Navbar />
-      <Outlet />
+      {/* <Hero />
+      <Outlet /> */}
+     <div>
+       {children}
+      </div> 
       <Footer />
     </>
   );
