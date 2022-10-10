@@ -26,24 +26,24 @@ const Navbar = () => {
                     <Link to="/RealEstate" className="navbar__link">Real Estate</Link>
                 </li>
                 <li className="navbar__item">
-                    <a href='./VacationHomes' className="navbar__link">
+                    <Link to="/VacationHomes" href='./VacationHomes' className="navbar__link">
                         Vacation Homes
-                    </a>
+                    </Link>
                 </li>
                 <li className="navbar__item">
-                    <a href='./Home' className="navbar__link">
+                    <Link to="" href='./Home' className="navbar__link">
                         Discover Nosara
-                    </a>
+                    </Link>
                 </li>
                 <li className="navbar__item">
-                    <a href='./Home' className="navbar__link">
+                    <Link to="" href='./Home' className="navbar__link">
                         Blog
-                    </a>
+                    </Link>
                 </li>
                 <li className="navbar__item">
-                    <a href='./Home' className="navbar__link">
+                    <Link to="" href='./Home' className="navbar__link">
                         Contact
-                    </a>
+                    </Link>
                 </li>
             </ul>
 

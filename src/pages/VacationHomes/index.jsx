@@ -93,6 +93,8 @@ const VacationHomes = (props) => {
  
 
         
+        
+   console.log("properties", properties);
     return (
         
         <Layout>

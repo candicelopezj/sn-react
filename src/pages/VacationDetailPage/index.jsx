@@ -1,5 +1,5 @@
 import "./styles.css"
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import img from "../../images/location.svg"
 import Layout from "../Layout";
 import beds from "../../images/bedrooms1.svg"
@@ -15,8 +15,8 @@ const VacationDetailPage = (props) => {
     const [searchParams] = useSearchParams();
     const parametros = searchParams.get('id')
     let { slug } = useParams();
-     const [properties, setProperties] = useState({});
-     const query = ` 
+    const [properties, setProperties] = useState({});
+    const query = ` 
      {
          rentalsCollection(where: {slug_contains: "${slug}"}, order: target_ASC)
          {
@@ -24,6 +24,8 @@ const VacationDetailPage = (props) => {
              {
                id
                rentalName
+               video 
+               map
                descriptionOfProperty 
                {
                  json
@@ -42,28 +44,26 @@ const VacationDetailPage = (props) => {
          }
      }
      `;
-     useEffect(() => {
-         window
-             .fetch(`https://graphql.contentful.com/content/v1/spaces/3i04xqrcd8f9/`, {
-                 method: "POST",
-                 headers: {
-                     "Content-Type": "application/json",
-                     Authorization: "Bearer nV2Ia5_OP4kx92aAp3mS6ItlH19Oi6mqVynE-bPK0H4",
-                 },
-                 body: JSON.stringify({query})
-             })
-             .then((response) => response.json())
-             .then(({ data, errors }) => {
-                 if (errors) {
-                     console.error(errors);
-                 }
-                 console.log(data)
+    useEffect(() => {
+        window
+            .fetch(`https://graphql.contentful.com/content/v1/spaces/3i04xqrcd8f9/`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer nV2Ia5_OP4kx92aAp3mS6ItlH19Oi6mqVynE-bPK0H4",
+                },
+                body: JSON.stringify({ query })
+            })
+            .then((response) => response.json())
+            .then(({ data, errors }) => {
+                if (errors) {
+                    console.error(errors);
+                }
+                console.log(data)
                 setProperties(data.rentalsCollection.items[0]);
-             });
-     
-     }, []);
- 
+            });
 
+    }, []);
 
 
     return (
@@ -88,18 +88,15 @@ const VacationDetailPage = (props) => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    {parametros}
-                </div>
                 <div className="hero__wrapper">
-                    <div className="id">
-                    {properties.id}
+                    <div className="">
+                        {properties.id}
                     </div>
                     <div className="hero__subtitle">
                         {properties.price}
                     </div>
                     <h3 className="hero__title">
-                    {properties.rentalName}
+                        {properties.rentalName}
                     </h3>
                     <div className="location">
                         <img src={img} alt="" />
@@ -175,6 +172,17 @@ const VacationDetailPage = (props) => {
                     </div>
 
                 </div>
+            </section>
+            <section>
+                <div className="detailpage">
+                    <iframe className="detailpage__video" src={properties.video} height="200" width="300" title="Iframe Example"></iframe>
+                </div>
+                <div className="detailpage">
+                   <iframe className="detailpage__map" src={properties.map} width="600" height="450" style={{ border: 0 }} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div> 
+                <div className="detailpage__map"
+                    dangerouslySetInnerHTML={{ __html: `<iframe class="detailpage__map" src={${properties.map}} width="600" height="450" style={{ border: 0 }} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>` }}
+                />
             </section>
         </Layout>
 

@@ -128,4 +128,20 @@
     flex-direction: row-reverse;
     justify-content: flex-end;
 }
-   
+.detailpage{
+    display: flex;
+    flex-direction: row;
+}
+
+.detailpage__video{
+    height: 400px;
+    width: 600px;
+    border-radius: 3px;
+    border-color: #f2f2f2;
+}
+.detailpage__map{
+    height: 400px;
+    width: 600px;
+    border-radius: 3px;
+    border-color: #f2f2f2;
+}
