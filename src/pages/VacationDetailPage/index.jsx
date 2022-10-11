@@ -6,12 +6,11 @@ import beds from "../../images/bedrooms1.svg"
 import bath from "../../images/bathroom1.svg"
 import people from "../../images/person.svg"
 import house from '../../images/real-estate-hero.jpeg'
-import { useSearchParams, useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 
 
 
 const VacationDetailPage = (props) => {
-    const [searchParams] = useSearchParams();
     let { slug } = useParams();
     const [properties, setProperties] = useState({});
     const query = ` 
