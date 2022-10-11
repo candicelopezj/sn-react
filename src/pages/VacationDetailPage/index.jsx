@@ -7,13 +7,11 @@ import bath from "../../images/bathroom1.svg"
 import people from "../../images/person.svg"
 import house from '../../images/real-estate-hero.jpeg'
 import { useSearchParams, useParams } from 'react-router-dom';
-import { getByTitle } from "@testing-library/react";
 
 
 
 const VacationDetailPage = (props) => {
     const [searchParams] = useSearchParams();
-    const parametros = searchParams.get('id')
     let { slug } = useParams();
     const [properties, setProperties] = useState({});
     const query = ` 
@@ -63,7 +61,7 @@ const VacationDetailPage = (props) => {
                 setProperties(data.rentalsCollection.items[0]);
             });
 
-    }, []);
+    }, [query]);
 
 
     return (
@@ -160,11 +158,101 @@ const VacationDetailPage = (props) => {
                                 </div>
                                 <div className="form__detail">
                                     <label className="form__label" htmlFor="phonenumber">
-
                                         phone
                                     </label>
                                     <input id="phonenumber" className="input__form" type="text" name="phonenumber"
                                         placeholder="Phone Number" />
+                                </div>
+                            </div>
+                            <div className="form__details">
+                                <div className="form__detail">
+                                    <label className="form__label" htmlFor="dates">
+                                        estimated dates
+                                    </label>
+                                    <div className="form-detail__dates">
+                                        <input id="dates" className="input__form" placeholder="Start Date" type="date" name="dates" />
+                                        <input id="dates" className="input__form" placeholder="End Date" type="date" name="dates" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="form__details">
+                                <div className="form__detail">
+                                    <label className="form__label" htmlFor="numberofguest">
+                                        number of guests
+                                    </label>
+                                    <select id="guest"  name="guest">
+                                         <option>1</option>
+                                         <option>2</option>
+                                         <option>3</option>
+                                         <option>4</option>
+                                         <option>5</option>
+                                         <option>6</option>
+                                         <option>7</option>
+                                         <option>8</option>
+                                         <option>9+</option>
+                                    </select>
+                                </div>
+                                <div className="form__detail">
+                                    <label className="form__label" htmlFor="numberofguest">
+                                        budget (per week)
+                                    </label>
+                                    <select id="budget"  name="budget">
+                                         <option>$500-$1000</option>
+                                         <option>$1000-$1500</option>
+                                         <option>$1500-2000</option>
+                                         <option>$2000+</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div className="form__details">
+                                <div className="form__detail">
+                                    <label className="form__label" htmlFor="numberofguest">
+                                      select important features
+                                    </label>
+                                    <div className="form__checkbox">
+                                         <input type="checkbox" id="features" name="features"/>
+                                         <label className="form__label-checkbox" type="text">walk to surf</label>
+                                    </div>
+                                    <div className="form__checkbox">
+                                         <input type="checkbox" id="features" name="features"/>
+                                         <label className="form__label-checkbox" type="text">ocean view</label>
+                                    </div>
+                                    <div className="form__checkbox">
+                                         <input type="checkbox" id="features" name="features"/>
+                                         <label className="form__label-checkbox" type="text">pool</label>
+                                    </div>
+                                    <div className="form__checkbox">
+                                         <input type="checkbox" id="features" name="features"/>
+                                         <label className="form__label-checkbox" type="text">near restaurants and bars</label>
+                                    </div>
+                                </div>
+                                <div className="form__detail">
+                                    <label className="form__label" htmlFor="numberofguest">
+                                      activities
+                                    </label>
+                                    <div className="form__checkbox">
+                                         <input type="checkbox" id="activities" name="activities"/>
+                                         <label className="form__label-checkbox" type="text">surf lessons</label>
+                                    </div>
+                                    <div className="form__checkbox">
+                                         <input type="checkbox" id="activities" name="activities"/>
+                                         <label className="form__label-checkbox" type="text">yoga</label>
+                                    </div>
+                                    <div className="form__checkbox">
+                                         <input type="checkbox" id="activities" name="activities"/>
+                                         <label className="form__label-checkbox" type="text">fishing</label>
+                                    </div>
+                                    <div className="form__checkbox">
+                                         <input type="checkbox" id="activities" name="activities"/>
+                                         <label className="form__label-checkbox" type="text">horseback riding</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="form_details">
+                                <div className="form__detail">
+                                    <label className="form__label" htmlFor="numberofguest">
+                                        number of guests
+                                    </label>
                                 </div>
                             </div>
                             <button className="button__form">Sign Up</button>
@@ -174,15 +262,14 @@ const VacationDetailPage = (props) => {
                 </div>
             </section>
             <section>
-                <div className="detailpage">
-                    <iframe className="detailpage__video" src={properties.video} height="200" width="300" title="Iframe Example"></iframe>
+                <div className="detailpage-container">
+                    <div className="detailpage-map">
+                        <iframe className="detailpage__video" src={properties.video} height="200" width="300" title={properties.video}></iframe>
+                    </div>
+                    <div className="detailpage-video"
+                        dangerouslySetInnerHTML={{ __html: `<iframe class="detailpage__map" src=${properties.map} </iframe>` }}
+                    />
                 </div>
-                <div className="detailpage">
-                   <iframe className="detailpage__map" src={properties.map} width="600" height="450" style={{ border: 0 }} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div> 
-                <div className="detailpage__map"
-                    dangerouslySetInnerHTML={{ __html: `<iframe class="detailpage__map" src={${properties.map}} width="600" height="450" style={{ border: 0 }} loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>` }}
-                />
             </section>
         </Layout>
 

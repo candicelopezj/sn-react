@@ -145,3 +145,13 @@
     border-radius: 3px;
     border-color: #f2f2f2;
 }
+.detailpage-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 30px;
+}
+.form-detail__dates {
+   display: flex;
+   flex-direction: row;
+}
