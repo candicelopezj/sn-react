@@ -1,4 +1,5 @@
 import './realestate.css'
+import GridCard from '../../components/GridCard';
 import Hero from '../../components/Hero';
 import typeOfProperty from '../../images/house__icon.svg'
 import beds from '../../images/bedrooms1.svg'
@@ -30,6 +31,7 @@ const query = `{
             price
             beds
             baths
+            slug
             location
             squareFootage
             typeOfProperty
@@ -231,57 +233,22 @@ const RealEstate = (props) => {
                         <div className="grid__cards">
                             {
                                 properties.map((property) =>
-                                    <div key={property.id} className="grid__card">
-                                        <div className="grid__imgs">
-                                            <img src={property.image.url} alt="" />
-                                        </div>
-                                        <div className="grid__info">
-                                            <div className="grid__details">
-                                                <div className="grid__card-details">
-                                                    ${property.price}
-                                                </div>
-                                                <div className="grid__card-details">
-                                                    {property.location}
-                                                </div>
-                                            </div>
-                                            <div className="grid__card-title">
-                                                {property.title}
-                                            </div>
-                                            <div className="grid__card-icons">
-                                                <div className="grid__icon-details">
-                                                    <img className="grid__icons" src={typeOfProperty} alt="" />
-                                                    {property.typeOfProperty}
-                                                </div>
-                                                <div className="grid__icon-details">
-                                                    <img className="grid__icons" src={squareFootage} alt="" />
-                                                    {property.squareFootage}
-                                                </div>
-                                                {property.beds && (
-                                                   <div className="grid__icon-details">
-                                                      <img className="grid__icons" src={beds} alt="" />
-                                                    {property.beds}
-                                                </div>
-                                                )}
-                                                {property.baths && (
-                                                    <div className="grid__icon-details">
-                                                        <img className="grid__icons" src={bath} alt="" />
-                                                        {property.baths}
-                                                    </div>
-                                                )}
-                                            </div>
-                                            <div className="grid__description">
-                                                {property.descriptionOfProperty?.json && (
-                                                    <div>
-                                                        {property.descriptionOfProperty.json?.content[0].content[0].value}
-                                                    </div>
-                                                )}
-                                            </div>
-                                            <div className="id">
-                                                #{property.id}
-                                            </div>
-                                        </div>
+                                <GridCard 
 
-                                    </div>
+                                link = {`/PropertyDetailPage/${property.slug}`} 
+                                price = {property.price} 
+                                location = {property.location} 
+                                name = {property.rentalName} 
+                                imgUrl = {property.image.url} 
+                                numBeds = {property.beds ? property.beds : null} 
+                                numBath = {property.baths ? property.baths : null} 
+                                numPerson = {property.numberOfPeople ? property.numberOfPeople : null} 
+                                footage = {property.squareFootage ? property.squareFootage : null} 
+                                lot = {property.typeOfProperty? property.typeOfProperty: null} 
+                                description = {property.descriptionOfProperty.json ? property.descriptionOfProperty.json?.content[0].content[0].value : null} 
+                                id = {property.id} 
+                                
+                                />
                                 )
                             }
 

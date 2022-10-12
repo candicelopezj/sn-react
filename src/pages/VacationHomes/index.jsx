@@ -1,5 +1,6 @@
 import './vacation.css'
 import '../VacationDetailPage'
+import GridCard from '../../components/GridCard';
 import Hero from '../../components/Hero';
 import person from '../../images/person.svg'
 import bedroom from '../../images/bedrooms1.svg'
@@ -256,51 +257,20 @@ const VacationHomes = (props) => {
                         <div className="grid__cards">
                             {
                                 properties.map((property) =>
-                                    <Link to={`/VacationDetailPage/${property.slug}`} key={property.id} className="grid__card">
-                                        <div className="grid__imgs">
-                                            <img src={property.image.url} alt="" />
-                                        </div>
-                                        <div className="grid__info">
-                                            <div className="grid__details">
-                                                <div className="grid__card-details">
-                                                    ${property.price}
-                                                </div>
-                                                <div className="grid__card-details">
-                                                    {property.location}
-                                                </div>
-                                            </div>
-                                            <div className="grid__card-title">
-                                                {property.rentalName}
-                                            </div>
-                                            <div className="grid__card-icons">
-                                                <div className="grid__icon-details">
-                                                    <img className="grid__icons" src={bedroom} alt="" />
-                                                    {property.beds}
-                                                </div>
-                                                <div className="grid__icon-details">
-                                                    <img className="grid__icons" src={bathroom} alt="" />
-                                                    {property.baths}
-                                                </div>
-                                                <div className="grid__icon-details">
-                                                    <img className="grid__icons" src={person} alt="" />
-                                                    {property.numberOfPeople}
-                                                </div>
-                                            </div>
-                                          
-                                            <div className="grid__description">
-                                            {property.descriptionOfProperty?.json && (
-                                                <div>
-                                                     {property.descriptionOfProperty.json?.content[0].content[0].value}
-                                                </div>
-                                               )} 
-                                            </div>
-                                    
-                                            <div className="id">
-                                                #{property.id}
-                                            </div>
-                                        </div>
+                                <GridCard 
 
-                                    </Link>
+                                link = {`/VacationDetailPage/${property.slug}`} 
+                                price = {property.price} 
+                                location = {property.location} 
+                                name = {property.rentalName} 
+                                imgUrl = {property.image.url} 
+                                numBeds = {property.beds} 
+                                numBath = {property.baths} 
+                                numPerson = {property.numberOfPeople} 
+                                description = {property.descriptionOfProperty.json ? property.descriptionOfProperty.json?.content[0].content[0].value : null} 
+                                id = {property.id} 
+                                
+                                />
                                 )
                             }
 

@@ -1,0 +1,90 @@
+.grid__promotion-rentals--container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+    @media only screen and (max-width: 1005px) {
+        .grid__promotion-rentals--container>div:last-child {
+            width: 100%;
+  
+        }
+  
+        .grid__promotion-rentals--container>div:first-child {
+            width: 100%;
+            padding: 1;
+        }
+  
+    }
+  
+    .grid__promotion-rentals--card {
+        background: #f2f2f2;
+    }
+    .grid__promotion-rentals--card-location {
+        font-size: 14px;
+        color: hsl(0deg 1% 30%);
+    }
+  
+    .grid__promotion-rentals--cards {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        
+    }
+    @media only screen and (max-width: 1005px) {
+        .grid__promotion-rentals--cards {
+            display: flex;
+            flex-direction: column  !important;
+            position: relative;
+            gap: 20px;
+        }
+        }
+    .grid__promotion-rentals--details {
+        color: hsl(0deg 1% 30%);
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+    }
+    
+    .grid__promotion-rentals--imgs >img {
+        width: 100%;
+        height: 275px;
+        object-fit: cover;
+    }
+    @media only screen and (max-width: 1005px) {
+        .grid__promotion-rentals--imgs >img {
+            width: 100%;
+            height: 400px;
+        }
+        }
+  
+    .grid__promotion-rentals--icons {
+        display: flex;
+        gap: 40px;
+        margin-bottom: 10px;
+    }
+  
+    .grid__promotion-rentals--icons {
+        width: 20px;
+    }
+    .grid__promotion-rentals--card-title {
+        overflow-wrap: break-word;
+        font-size: 1.5rem;
+        color: #484848;
+        margin-bottom: 10px;
+    }
+    .grid__promotion-rentals--info {
+        margin: 15px;
+    }
+    
+    .property__id {
+        margin-bottom: 130px;
+    }
+
+    .hero__wrapper {
+        margin: 0rem 0rem 2rem 0rem;
+    }

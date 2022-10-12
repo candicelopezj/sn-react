@@ -10,36 +10,35 @@ import {  useParams } from 'react-router-dom';
 
 
 
-const VacationDetailPage = (props) => {
+const PropertyDetailPage = (props) => {
     let { slug } = useParams();
     const [properties, setProperties] = useState({});
     const query = ` 
      {
-         rentalsCollection(where: {slug_contains: "${slug}"}, order: target_ASC)
+        propertiesCollection(where: {slug_contains: "${slug}"}, order: target_ASC) {
+            items 
+       {
+         id
+         map 
+         video
+         title
+         descriptionOfProperty 
          {
-             items 
-             {
-               id
-               rentalName
-               video 
-               map
-               descriptionOfProperty 
-               {
-                 json
-               }
-                image
-                {
-                       title
-                       contentType
-                       fileName
-                       url
-                }
-               price
-               location
-               
-             } 
+           json
          }
-     }
+          image
+          {
+                 title
+                 contentType
+                 fileName
+                 url
+          }
+         price
+         location
+         
+      }
+    }
+}
      `;
     useEffect(() => {
         window
@@ -299,4 +298,4 @@ const VacationDetailPage = (props) => {
 
 }
 
-export default VacationDetailPage;
+export default PropertyDetailPage;
