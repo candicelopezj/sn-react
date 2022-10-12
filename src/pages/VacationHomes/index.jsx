@@ -2,12 +2,8 @@ import './vacation.css'
 import '../VacationDetailPage'
 import GridCard from '../../components/GridCard';
 import Hero from '../../components/Hero';
-import person from '../../images/person.svg'
-import bedroom from '../../images/bedrooms1.svg'
-import bathroom from '../../images/bathroom1.svg'
 import Layout from '../Layout'
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 // const query = `
 // {

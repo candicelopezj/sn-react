@@ -1,10 +1,6 @@
 import './realestate.css'
 import GridCard from '../../components/GridCard';
 import Hero from '../../components/Hero';
-import typeOfProperty from '../../images/house__icon.svg'
-import beds from '../../images/bedrooms1.svg'
-import bath from '../../images/bathroom1.svg'
-import squareFootage from '../../images/expand__icon.svg'
 import Layout from '../Layout'
 import { useState, useEffect } from "react";
 const query = `{
