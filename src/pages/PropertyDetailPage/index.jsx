@@ -56,7 +56,7 @@ const PropertyDetailPage = (props) => {
                     console.error(errors);
                 }
                 console.log(data)
-                setProperties(data.rentalsCollection.items[0]);
+                setProperties(data.propertiesCollection.items[0]);
             });
 
     }, [query]);
@@ -92,7 +92,7 @@ const PropertyDetailPage = (props) => {
                         {properties.price}
                     </div>
                     <h3 className="detailpage__hero-title">
-                        {properties.rentalName}
+                        {properties.title}
                     </h3>
                     <div className="detailpage__location">
                         <img src={img} alt="" />

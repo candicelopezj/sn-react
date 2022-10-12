@@ -234,7 +234,7 @@ const RealEstate = (props) => {
                                 link = {`/PropertyDetailPage/${property.slug}`} 
                                 price = {property.price} 
                                 location = {property.location} 
-                                name = {property.rentalName} 
+                                name = {property.title} 
                                 imgUrl = {property.image.url} 
                                 numBeds = {property.beds ? property.beds : null} 
                                 numBath = {property.baths ? property.baths : null} 

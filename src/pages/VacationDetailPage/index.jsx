@@ -233,19 +233,19 @@ const VacationDetailPage = (props) => {
                                     </label>
                                     <div className="form__checkbox">
                                          <input type="checkbox" id="features" name="features"/>
-                                         <label className="form__label-checkbox" type="text">walk to surf</label>
+                                         <label className="form__label-checkbox" type="text">Walk to Surf</label>
                                     </div>
                                     <div className="form__checkbox">
                                          <input type="checkbox" id="features" name="features"/>
-                                         <label className="form__label-checkbox" type="text">ocean view</label>
+                                         <label className="form__label-checkbox" type="text">Ocean View</label>
                                     </div>
                                     <div className="form__checkbox">
                                          <input type="checkbox" id="features" name="features"/>
-                                         <label className="form__label-checkbox" type="text">pool</label>
+                                         <label className="form__label-checkbox" type="text">Pool</label>
                                     </div>
                                     <div className="form__checkbox">
                                          <input type="checkbox" id="features" name="features"/>
-                                         <label className="form__label-checkbox" type="text">near restaurants and bars</label>
+                                         <label className="form__label-checkbox" type="text">Near Restaurants/Bars</label>
                                     </div>
                                 </div>
                                 <div className="form__detail">
@@ -254,27 +254,49 @@ const VacationDetailPage = (props) => {
                                     </label>
                                     <div className="form__checkbox">
                                          <input type="checkbox" id="activities" name="activities"/>
-                                         <label className="form__label-checkbox" type="text">surf lessons</label>
+                                         <label className="form__label-checkbox" type="text">Surf Lessons</label>
                                     </div>
                                     <div className="form__checkbox">
                                          <input type="checkbox" id="activities" name="activities"/>
-                                         <label className="form__label-checkbox" type="text">yoga</label>
+                                         <label className="form__label-checkbox" type="text">Yoga</label>
                                     </div>
                                     <div className="form__checkbox">
                                          <input type="checkbox" id="activities" name="activities"/>
-                                         <label className="form__label-checkbox" type="text">fishing</label>
+                                         <label className="form__label-checkbox" type="text">Fishing</label>
                                     </div>
                                     <div className="form__checkbox">
                                          <input type="checkbox" id="activities" name="activities"/>
-                                         <label className="form__label-checkbox" type="text">horseback riding</label>
+                                         <label className="form__label-checkbox" type="text">Horseback Riding</label>
                                     </div>
                                 </div>
                             </div>
                             <div className="form_details">
                                 <div className="form__detail">
                                     <label className="form__label" htmlFor="numberofguest">
-                                        number of guests
+                                        Private Security Information
                                     </label>
+                                        <div className="form__detailpage-checkbox">
+                                            <div className="form__checkbox">
+                                                <input className="checkbox__round" type="checkbox" id="activities" name="activities"/>
+                                                <label className="form__label-checkbox" type="text">Yes</label>
+                                            </div>
+                                            <div className="form__checkbox">
+                                                <input className="checkbox__round" type="checkbox" id="activities" name="activities"/>
+                                                <label className="form__label-checkbox" type="text">No</label>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="form_details">
+                                <div className="form__detail">
+                                    <label className="form__label" htmlFor="numberofguest">
+                                        Message
+                                    </label>
+                                        <div className="form__detailpage-checkbox">
+                                            <div className="form__checkbox">
+                                                <textarea className="form__check-comments" placeholder="Questions or Comments" type="text" id="activities" name="activities"/>
+                                            </div>
+                                        </div>
                                 </div>
                             </div>
                             <button className="button__form">Sign Up</button>

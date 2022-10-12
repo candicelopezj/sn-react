@@ -17,8 +17,9 @@ export default function GridCard(props) {
             <div className="grid__info">
                 <div className="grid__details">
                     <div className="grid__card-details">
-                        ${price}
+                        {price}
                     </div>
+                
                     <div className="grid__card-details">
                         {location}
                     </div>
