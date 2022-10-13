@@ -3,6 +3,7 @@ import '../VacationDetailPage'
 import GridCard from '../../components/GridCard';
 import Hero from '../../components/Hero';
 import Layout from '../Layout'
+import { Helmet } from 'react-helmet';
 import { useState, useEffect } from "react";
 
 // const query = `
@@ -95,6 +96,9 @@ const VacationHomes = (props) => {
     return (
         
         <Layout>
+            <Helmet>
+                <title>Nosara Rental Homes</title>
+            </Helmet>
             {heroItems && (
                 <Hero data={heroItems[0]} />
             )}

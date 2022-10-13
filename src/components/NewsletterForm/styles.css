@@ -1,0 +1,58 @@
+
+.NewsletterForm {
+    background: #f2f2f2;
+    padding: 2rem 2rem 2rem 2rem;
+}
+.NewsletterForm__title {
+    font-size: 1.5em;
+    font-family: "Open Sans", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+    color: #484848;
+}
+.NewsletterForm__subtitle {
+    margin: 10px 0 25px;
+    font-family: "Open Sans", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+    color: #484848;
+    overflow-wrap: break-word;
+}
+
+.NewsletterForm__dates {
+   display: flex;
+   flex-direction: row;
+}
+
+.form__label {
+    padding-top: 30px;
+    word-wrap: break-word;
+    color: #484848;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 25px;
+    margin: 0;
+    text-transform: uppercase;
+}  
+.form__label-checkbox {
+   font-family: "Open Sans", Arial, Helvetica, "Nimbus Sans L", sans-serif;
+   color: #484848;
+}
+
+
+.form__detailpage-checkbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__check-comments {
+    width: 456px;
+    height: 126px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 0.5rem;
+   
+}
+
+.form__check-comments:hover{
+    box-shadow: 0px 0px 5px #4195fc; 
+    -moz-box-shadow: 0px 0px 5px #4195fc;
+    -webkit-box-shadow: 0px 0px 5px #4195fc; 
+}

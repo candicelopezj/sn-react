@@ -1,9 +1,11 @@
 import './home.css';
+import NewsletterForm from '../../components/NewsletterForm';
 import house from "../../images/grid__picture-house.jpeg";
 import icon from '../../images/bathroom1.svg'
 import Hero from '../.././components/Hero'
 import Layout from '../Layout';
 import newsletter from '../../images/newsletter__img.jpeg'
+import { Helmet } from 'react-helmet';
 import { useEffect, useState } from 'react';
 
 const query = `{
@@ -49,6 +51,9 @@ const Home = (props) => {
     }, []);
     return (
     <Layout >
+        <Helmet>
+            <title>Nosara Costa Rica</title>
+        </Helmet>
         <div>   
         <Hero data={heroItems[0] || {}}/>
         <Hero data={heroItems[1] || {}}/> 
@@ -270,54 +275,17 @@ const Home = (props) => {
                 </div>
             </div>
         </section>
-        <section className="newsletter">
-            <div className="newsletter__img">
+        <section className="hero__container">      
+            <div className="hero__img">
                 <img src={newsletter} alt=""/>
             </div>
-            <div className="newsletter__info">
-                <div className="newsletter__title">
-                    <h2>
-                        Would you like to receive our Newsletter?
-                    </h2>
-                </div>
-                <form action="https://formspree.io/f/xpznzyjq" method="POST">
-                    <div className="form__details">
-                        <div className="form__detail">
-                            <label className="form__label" htmlFor="emailaddress">
-                                first name
-                                <span className="form__star">*</span>
-                            </label>
-                            <input id="fname" className="input__form" type="text" name="fname" placeholder="First"/>
-                        </div>
-                        <div className="form__detail">
-                            <label className="form__label" htmlFor="phonenumber">
-                                last name 
-                                <span className="form__star">*</span>
-                            </label>
-                            <input id="lastname" className="input__form" type="text" name="lastname" placeholder="Last"/>
-                        </div>
-                    </div>
-                    <div className="form__details">
-                        <div className="form__detail">
-                            <label className="form__label" htmlFor="emailaddress">
-                                email
-                                <span className="form__star">*</span>
-                            </label>
-                            <input id="emailaddress" className="input__form" type="text" name="emailaddress"
-                                placeholder="Email Address"/>
-                        </div>
-                        <div className="form__detail">
-                            <label className="form__label" htmlFor="phonenumber">
-    
-                                phone
-                            </label>
-                            <input id="phonenumber" className="input__form" type="text" name="phonenumber"
-                                placeholder="Phone Number"/>
-                        </div>
-                    </div>
-                    <button className="button__form">Sign Up</button>
-                </form>
-            </div>
+             <NewsletterForm
+                        title="Enquire About This Property Now"
+                        subtitle="We will get back to you fast, our usual response time is in the same hour! If there is any other property, or specific criteria you're interested in, include that below and we will be glad to help."
+                        formspreeUrl="https://formspree.io/f/xpznzyjq"
+                        buttonText="Sign Up for latest listings!"
+                    >
+             </NewsletterForm>
         </section>
         </div>
     </Layout>

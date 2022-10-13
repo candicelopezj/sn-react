@@ -9,6 +9,7 @@ import './styles.css'
 
 export default function GridCard(props) {
     const {link, price, location, name, imgUrl, numBeds, numBath, numPerson, description, id, footage, lot} = props
+
     return (
         <Link to={link} className="grid__card" key={id} >
             <div className="grid__imgs">
@@ -64,7 +65,7 @@ export default function GridCard(props) {
                 <div className="grid__description">
                     {description && (
                         <div>
-                            {description}
+                            {description.substring(0,100)}...
                         </div>
                     )}
                 </div>

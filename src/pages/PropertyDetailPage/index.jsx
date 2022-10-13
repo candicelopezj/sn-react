@@ -1,5 +1,6 @@
 import "./styles.css"
 import { useState, useEffect } from 'react';
+import NewsletterForm from '../../components/NewsletterForm';
 import img from "../../images/location.svg"
 import Layout from "../Layout";
 import beds from "../../images/bedrooms1.svg"
@@ -109,176 +110,82 @@ const PropertyDetailPage = (props) => {
 
                         </strong>
                         <div className="detailpage__description-body">
-                           <p>
-                            Jade Nosara is an inspiring retreat nestled where the jungle meets the
-                            Pacific Ocean at Playa Guiones, a place for exploration of what is natural within ourselves,
-                            and the transcendent natural beauty of the flora, fauna, and wildlife that surrounds us there.
-                            This award-winning property was created by architect Donald Loria Prendas.
-                            The main house is a great space for cooking a meal or having
-                            a private chef prepare a meal for your group.
-                            The terrace ends where the pool begins. Our guests spend time together in this peaceful space.
-                            Come enjoy mindful ping pong or Bocce Ball.
-                           </p>
-                           <p>
-                            Jade Nosara is an inspiring retreat nestled where the jungle meets the
-                            Pacific Ocean at Playa Guiones, a place for exploration of what is natural within ourselves,
-                            and the transcendent natural beauty of the flora, fauna, and wildlife that surrounds us there.
-                            This award-winning property was created by architect Donald Loria Prendas.
-                            The main house is a great space for cooking a meal or having
-                            a private chef prepare a meal for your group.
-                            The terrace ends where the pool begins. Our guests spend time together in this peaceful space.
-                            Come enjoy mindful ping pong or Bocce Ball.
-                           </p>
-                           <p>
-                            Jade Nosara is an inspiring retreat nestled where the jungle meets the
-                            Pacific Ocean at Playa Guiones, a place for exploration of what is natural within ourselves,
-                            and the transcendent natural beauty of the flora, fauna, and wildlife that surrounds us there.
-                            This award-winning property was created by architect Donald Loria Prendas.
-                            The main house is a great space for cooking a meal or having
-                            a private chef prepare a meal for your group.
-                            The terrace ends where the pool begins. Our guests spend time together in this peaceful space.
-                            Come enjoy mindful ping pong or Bocce Ball.
-                           </p>
-                          
+                            {properties.descriptionOfProperty?.json ? properties.descriptionOfProperty?.json?.content[0].content[0].value : null} 
+                        
                         </div>
                     </div>
-                    <div className="detailpage__newsletter-info">
-                        <div>
-                            <div className="detailpage__newsletter-title">
-                                Book Your Vacation Home Now
-                            </div>
-                            <div className="detailpage__newsletter-subtitle">
-                                We will get back to you fast, our usual response time is less than an hour!
+                    <NewsletterForm 
+                        title="Enquire About This Property Now" 
+                        subtitle="We will get back to you fast, our usual response time is in the same hour! If there is any other property, or specific criteria you're interested in, include that below and we will be glad to help."
+                        formspreeUrl="https://formspree.io/f/xpznzyjq"
+                        buttonText="Sign Up for latest listings!"
+                    >
+                        <div className="form__details">
+                            <div className="form__detail">
+                                <label className="form__label" htmlFor="numberofguest">
+                                select important features
+                                </label>
+                                <div className="form__checkbox">
+                                    <input type="checkbox" id="features" name="features"/>
+                                    <label className="form__label-checkbox" type="text">Walk to Surf</label>
+                                </div>
+                                <div className="form__checkbox">
+                                    <input type="checkbox" id="features" name="features"/>
+                                    <label className="form__label-checkbox" type="text">Ocean View</label>
+                                </div>
+                                <div className="form__checkbox">
+                                    <input type="checkbox" id="features" name="features"/>
+                                    <label className="form__label-checkbox" type="text">Pool</label>
+                                </div>
+                                <div className="form__checkbox">
+                                    <input type="checkbox" id="features" name="features"/>
+                                    <label className="form__label-checkbox" type="text">Near Restaurants/Bars</label>
+                                </div>
                             </div>
                         </div>
-                        <form action="https://formspree.io/f/xpznzyjq" method="POST">
-                            <div className="form__details">
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="emailaddress">
-                                        first name
-                                        <span className="form__star">*</span>
-                                    </label>
-                                    <input id="fname" className="input__form" type="text" name="fname" placeholder="First" />
-                                </div>
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="phonenumber">
-                                        last name
-                                        <span className="form__star">*</span>
-                                    </label>
-                                    <input id="lastname" className="input__form" type="text" name="lastname" placeholder="Last" />
-                                </div>
+                        <div className="form__details">
+                        <div className="form__detail">
+                                <label className="form__label" htmlFor="numberofguest">
+                                    budget 
+                                </label>
+                                <select id="budget"  name="budget">
+                                    <option>$500k-$100k</option>
+                                    <option>$100k-$150k</option>
+                                    <option>$150k-$200k</option>
+                                    <option>$200k-$400k</option>
+                                    <option>$400k-$600k</option>
+                                    <option>$600k-$1M</option>
+                                    <option>$1M-$Above $1M</option>
+                                </select>
                             </div>
-                            <div className="form__details">
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="emailaddress">
-                                        email
-                                        <span className="form__star">*</span>
-                                    </label>
-                                    <input id="emailaddress" className="input__form" type="text" name="emailaddress"
-                                        placeholder="Email Address" />
-                                </div>
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="phonenumber">
-                                        phone
-                                    </label>
-                                    <input id="phonenumber" className="input__form" type="text" name="phonenumber"
-                                        placeholder="Phone Number" />
-                                </div>
+                        <div className="form__detail">
+                                <label className="form__label" htmlFor="numberofguest">
+                                    timeframe
+                                </label>
+                                <select id="guest"  name="guest">
+                                    <option>Now!!</option>
+                                    <option>Under 3 months</option>
+                                    <option>Under 6 months</option>
+                                    <option>This Year</option>
+                                    <option>Sometime</option>
+                                </select>
                             </div>
-                            <div className="form__details">
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="dates">
-                                        estimated dates
-                                    </label>
-                                    <div className="form-detail__dates">
-                                        <input id="dates" className="input__form" placeholder="Start Date" type="date" name="dates" />
-                                        <input id="dates" className="input__form" placeholder="End Date" type="date" name="dates" />
-                                    </div>
-                                </div>
+                        </div>
+                        <div className="form__details">
+                            <div className="form__detail">
+                                <label className="form__label" htmlFor="numberofguest">
+                                    next trip to nosara
+                                </label>
+                                <select id="guest"  name="guest">
+                                    <option>1 - 3 months</option>
+                                    <option>3 - 6 months</option>
+                                    <option>6 - 12 months</option>
+                                    <option>12+ months</option>
+                                </select>
                             </div>
-                            <div className="form__details">
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="numberofguest">
-                                        number of guests
-                                    </label>
-                                    <select id="guest"  name="guest">
-                                         <option>1</option>
-                                         <option>2</option>
-                                         <option>3</option>
-                                         <option>4</option>
-                                         <option>5</option>
-                                         <option>6</option>
-                                         <option>7</option>
-                                         <option>8</option>
-                                         <option>9+</option>
-                                    </select>
-                                </div>
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="numberofguest">
-                                        budget (per week)
-                                    </label>
-                                    <select id="budget"  name="budget">
-                                         <option>$500-$1000</option>
-                                         <option>$1000-$1500</option>
-                                         <option>$1500-2000</option>
-                                         <option>$2000+</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div className="form__details">
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="numberofguest">
-                                      select important features
-                                    </label>
-                                    <div className="form__checkbox">
-                                         <input type="checkbox" id="features" name="features"/>
-                                         <label className="form__label-checkbox" type="text">walk to surf</label>
-                                    </div>
-                                    <div className="form__checkbox">
-                                         <input type="checkbox" id="features" name="features"/>
-                                         <label className="form__label-checkbox" type="text">ocean view</label>
-                                    </div>
-                                    <div className="form__checkbox">
-                                         <input type="checkbox" id="features" name="features"/>
-                                         <label className="form__label-checkbox" type="text">pool</label>
-                                    </div>
-                                    <div className="form__checkbox">
-                                         <input type="checkbox" id="features" name="features"/>
-                                         <label className="form__label-checkbox" type="text">near restaurants and bars</label>
-                                    </div>
-                                </div>
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="numberofguest">
-                                      activities
-                                    </label>
-                                    <div className="form__checkbox">
-                                         <input type="checkbox" id="activities" name="activities"/>
-                                         <label className="form__label-checkbox" type="text">surf lessons</label>
-                                    </div>
-                                    <div className="form__checkbox">
-                                         <input type="checkbox" id="activities" name="activities"/>
-                                         <label className="form__label-checkbox" type="text">yoga</label>
-                                    </div>
-                                    <div className="form__checkbox">
-                                         <input type="checkbox" id="activities" name="activities"/>
-                                         <label className="form__label-checkbox" type="text">fishing</label>
-                                    </div>
-                                    <div className="form__checkbox">
-                                         <input type="checkbox" id="activities" name="activities"/>
-                                         <label className="form__label-checkbox" type="text">horseback riding</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="form_details">
-                                <div className="form__detail">
-                                    <label className="form__label" htmlFor="numberofguest">
-                                        number of guests
-                                    </label>
-                                </div>
-                            </div>
-                            <button className="button__form">Sign Up</button>
-                        </form>
-                    </div>
+                        </div>
+                    </NewsletterForm>
+                    
 
                 </div>
             </section>

@@ -7,13 +7,13 @@
     -webkit-font-smoothing: antialiased;
 }
 
-@media only screen and (max-width: 1004px) {
+@media only screen and (max-width: 700px) {
     .detailpage__hero-container{
         margin-top: 20px;
     }
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 700px) {
     .detailpage__hero-container {
         display: flex;
         flex-direction: column;
@@ -29,13 +29,15 @@
     width: 35%;
     height: 380px;
     margin: 0 6px 0 0;
-
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 700px) {
     .detailpage__hero-wrapper {
-        background: white;
-        padding: 0px 20px 0px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+        position: relative;
     }
 
 }
@@ -53,14 +55,14 @@
     line-height: 1.3;
 }
 
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 700px) {
     .detailpage__hero-title {
         font-size: 32px;
         margin-top: 0 !important;
     }
 }
 
-@media only screen and (max-width: 1004px) and (min-width: 1020px) {
+@media only screen and (max-width: 700px) and (min-width: 700px) {
     .detailpage__hero-title {
         font-size: 30px;
         line-height: initial;
@@ -88,12 +90,7 @@
    margin-left: 30px;
 }
 
-.detailpage__hero-img>img {
-    width: 734px;
-    height: 79%;
-}
-
-@media only screen and (max-width: 1025px) {
+@media only screen and (max-width: 700px) {
     .detailpage__hero-img>img {
         width: 100%;
     }
@@ -131,7 +128,7 @@
     font-size: 1.1rem!important;
     margin-top: 20px;
     margin: 0 auto;
-    max-width: 650px;
+    max-width: 1050px;
     width: 100%;
 }
 
@@ -164,60 +161,4 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
-
-.detailpage__newsletter-info {
-    background: #f2f2f2;
-    padding: 2rem 2rem 2rem 2rem;
-}
-.detailpage__newsletter-title {
-    font-size: 1.5em;
-    font-family: "Open Sans", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-    color: #484848;
-}
-.detailpage__newsletter-subtitle {
-    margin: 10px 0 25px;
-    font-family: "Open Sans", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-    color: #484848;
-}
-
-.form-detail__dates {
-   display: flex;
-   flex-direction: row;
-}
-.form__label {
-    padding-top: 30px;
-    word-wrap: break-word;
-    color: #484848;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    line-height: 25px;
-    margin: 0;
-    text-transform: uppercase;
-}  
-.form__label-checkbox {
-   font-family: "Open Sans", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-   color: #484848;
-}
-
-
-.form__detailpage-checkbox {
-    display: flex;
-    justify-content: space-between;
-}
-
-.form__check-comments {
-    width: 456px;
-    height: 126px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 0.5rem;
-   
-}
-
-.form__check-comments:hover{
-    box-shadow: 0px 0px 5px #4195fc; 
-    -moz-box-shadow: 0px 0px 5px #4195fc;
-    -webkit-box-shadow: 0px 0px 5px #4195fc; 
 }

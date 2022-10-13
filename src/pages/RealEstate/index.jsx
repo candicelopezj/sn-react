@@ -2,6 +2,7 @@ import './realestate.css'
 import GridCard from '../../components/GridCard';
 import Hero from '../../components/Hero';
 import Layout from '../Layout'
+import { Helmet } from 'react-helmet';
 import { useState, useEffect } from "react";
 const query = `{
     heroCollection(where: {target_contains: "RealEstate"}, order: target_ASC) {
@@ -44,7 +45,6 @@ const query = `{
   
 `;
 
-
 const RealEstate = (props) => {
     const [heroItems, setHeroItems] = useState([]);
     const [properties, setProperties] = useState([]);
@@ -71,6 +71,9 @@ const RealEstate = (props) => {
     return (
 
         <Layout>
+            <Helmet>
+                <title>Nosara Real Estate</title>
+            </Helmet>
             {heroItems && (
                 <Hero data={heroItems[0]} />
             )}
